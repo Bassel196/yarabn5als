@@ -63,7 +63,7 @@
                   </td>
                   <td>x<%= product.quantity %></td>
                   <% if(product.offerPrice){%>
-                  <td class="text-right"> <del class="text-muted mx-1"> EGP <%= product.price %></del> ₹<%= product.offerPrice %></td>
+                  <td class="text-right"> <del class="text-muted mx-1"> EGP <%= product.price %></del> EGP <%= product.offerPrice %></td>
                   <%}else{%>
                   <td class="text-right">EGP <%= product.price %> </td>
                   <%} %>

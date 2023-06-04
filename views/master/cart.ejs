@@ -45,11 +45,11 @@
                 </td>
                 <%if(item.offerPrice){%>
                 <td class="shoping__cart__price">
-                  <del class="text-muted">₹<%= item.price %></del>
-                  ₹<%= item.offerPrice.toFixed(2) %>
+                  <del class="text-muted">EGP <%= item.price %></del>
+                  EGP <%= item.offerPrice.toFixed(2) %>
                 </td>
                 <% }else{ %>
-                <td class="shoping__cart__price">₹<%= item.price %></td>
+                <td class="shoping__cart__price">EGP <%= item.price %></td>
                 <% } %>
                 <td class="shoping__cart__quantity">
                   <div class="quantity">
@@ -61,8 +61,8 @@
                   </div>
                 </td>
                 <td class="shoping__cart__total" id="item-<%=item.productId.id %>">
-                  <% if(item.offerPrice) {%> ₹<%= (item.offerPrice *
-                  item.quantity).toFixed(2) %> <% }else {%> ₹<%= (item.price *
+                  <% if(item.offerPrice) {%> EGP <%= (item.offerPrice *
+                  item.quantity).toFixed(2) %> <% }else {%> EGP <%= (item.price *
                   item.quantity).toFixed(2) %> <% } %>
                 </td>
                 <td class="shoping__cart__item__close">
@@ -100,11 +100,11 @@
           <ul id="total-list">
             <li>
               Subtotal
-              <span><del>₹<%= findCart.subTotal.toFixed(2) %></del></span>
+              <span><del>EGP <%= findCart.subTotal.toFixed(2) %></del></span>
             </li>
             <% let discount = findCart.subTotal - findCart.total %>
             <li>
-              Cart Discount <span class="text-muted">₹<%=discount.toFixed(2)%></span>
+              Cart Discount <span class="text-muted">EGP <%=discount.toFixed(2)%></span>
             </li>
             <% if(couponCode){%>
             <li>
@@ -115,7 +115,7 @@
             </li>
             <li>
               Total
-              <span>₹<%= (findCart.total - couponDiscount).toFixed(2) %></span>
+              <span>EGP <%= (findCart.total - couponDiscount).toFixed(2) %></span>
             </li>
             <% }else{%>
             <li>
