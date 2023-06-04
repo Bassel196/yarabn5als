@@ -167,7 +167,7 @@ module.exports = {
   },
 
   products: async (req, res) => {
-    try {
+     try {
       const errorMessage = req.flash("message");
       const allCategories = await Category.find()
         .sort({ categoryName: 1 })
@@ -181,7 +181,8 @@ module.exports = {
         allProducts: allProducts,
         errorMessage: errorMessage,
         layout: "layouts/adminLayout",
-      });
+      })
+
     } catch (err) {
       console.log(err.message);
       res.redirect("/admin");

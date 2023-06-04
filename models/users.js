@@ -47,6 +47,7 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       required: true,
     },
+    productImagePath: [String],
     facebook: {
       id: String,
       token: String,
