@@ -63,9 +63,9 @@
                   </td>
                   <td>x<%= product.quantity %></td>
                   <% if(product.offerPrice){%>
-                  <td class="text-right"> <del class="text-muted mx-1"> ₹<%= product.price %></del> ₹<%= product.offerPrice %></td>
+                  <td class="text-right"> <del class="text-muted mx-1"> EGP <%= product.price %></del> ₹<%= product.offerPrice %></td>
                   <%}else{%>
-                  <td class="text-right">₹<%= product.price %> </td>
+                  <td class="text-right">EGP <%= product.price %> </td>
                   <%} %>
                 </tr>
                 <% }) %>
@@ -73,11 +73,11 @@
               <tfoot>
                 <tr>
                   <td colspan="2">Subtotal</td>
-                  <td class="text-right">₹<%= myOrder.subTotal.toFixed(2) %></td>
+                  <td class="text-right">EGP <%= myOrder.subTotal.toFixed(2) %></td>
                 </tr>
                 <tr>
                   <td colspan="2">Shipping <i class="fa-solid fa-truck"></i> </td>
-                  <td class="text-right">₹0.0</td>
+                  <td class="text-right">EGP 0.0</td>
                 </tr>
                 <tr>
                   <td colspan="2">Discount</td>
@@ -105,7 +105,7 @@
               <div class="col-lg-6">
                 <h3 class="h6">Payment Method</h3>
                 <p><%= myOrder.paymentType %> <br>
-                  Total: ₹<%= myOrder.total.toFixed(2) %> </p>
+                  Total: EGP <%= myOrder.total.toFixed(2) %> </p>
               </div>
               <div class="col-lg-6">
                 <h3 class="h6"><i class="fa-solid fa-location-dot"></i> Billing address</h3>

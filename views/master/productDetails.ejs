@@ -53,12 +53,12 @@
           </div>
           <% if(findProduct.discount){ %>
           <div class="product__details__price">
-            <p><del>₹<%= findProduct.price %></del></p>
-            ₹<%= findProduct.offerPrice.toFixed(2) %>
+            <p><del>EGP <%= findProduct.price %></del></p>
+            EGP <%= findProduct.offerPrice.toFixed(2) %>
           </div>
           <%  } else{ %>
           <div class="product__details__price">
-            ₹<%= findProduct.price %>
+            EGP <%= findProduct.price %>
           </div>
           <% } %>
           <p><%= findProduct.description %></p>
@@ -197,7 +197,7 @@
           </div>
           <div class="product__item__text">
             <h6><a href="/product/<%= product.id %>"><%= product.name %></a></h6>
-            <h5>₹<%= product.price %> </h5>
+            <h5>EGP <%= product.price %> </h5>
           </div>
         </div>
       </div>
