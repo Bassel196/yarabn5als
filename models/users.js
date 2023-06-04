@@ -47,7 +47,7 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       required: true,
     },
-    productImagePath: [String],
+    userImagePath: [String],
     facebook: {
       id: String,
       token: String,
@@ -104,8 +104,20 @@ userSchema.plugin(passportLocalMongoose, {
   findByUsername: function (model, queryParameters) {
     // Add additional query parameter - AND condition - active: true
     queryParameters.isActive = true;
-    return model.findOne(queryParameters);
+    return model.findOne(queryParameters)
   },
-});
+})
+
+// userSchema.pre('save', async (next)=>{
+//   try {
+//       const salt = await bcrypt.genSalt(10)
+//       const hashedPassword = await bcrypt.hash(this.password,salt)
+//       this.password = hashedPassword
+//       next()
+//   } catch (error) {
+//       next(error)
+//   }
+// })
+
 
 module.exports = mongoose.model("User", userSchema);
