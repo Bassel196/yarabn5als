@@ -106,7 +106,7 @@
                       <label class="form-label">Category</label>
                       <select name="category" class="form-select">
                         <% allCategories.forEach(category=>{ %>
-                        <% if(product.category.id==category.id) { %>
+                          <% if (product && product.category && product.category.id === category.id) { %>
                         <option selected value="<%=category.id %>" label="<%=category.categoryName %>"></option>
                         <% } else { %>
                         <option value="<%=category.id %>" label="<%=category.categoryName %>">

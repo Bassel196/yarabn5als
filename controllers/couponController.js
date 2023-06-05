@@ -95,6 +95,7 @@ module.exports = {
       res.status(201).json({ message: "coupon activated" });
     } catch (err) {
       res.status(500).json({ err });
+      console.log(err)
     }
   },
 
@@ -105,6 +106,7 @@ module.exports = {
       res.status(201).json({ message: "coupon deactivated" });
     } catch (err) {
       res.status(500).json({ err });
+      console .log(err)
     }
   },
 };
