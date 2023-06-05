@@ -291,10 +291,11 @@ module.exports = {
   },
 
   deleteCategory: async (req, res) => {
-    let category;
+    // let category;
     try {
-      category = await Category.findById(req.params.id);
-      await category.remove();
+      const category = await Category.findById(req.params.id);
+      // await category.remove();
+      await category.deleteOne();
       res.redirect("/admin/categories");
     } catch (err) {
       console.log(err.message);

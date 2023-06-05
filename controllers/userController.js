@@ -20,9 +20,9 @@ module.exports = {
             res.redirect("/register");
           } else {
             passport.authenticate("local")(req, res, function () {
-              process.nextTick(async () => {
-                await sendOtp(req, res);
-              });
+              // process.nextTick(async () => {
+              //   await sendOtp(req, res);
+              // });
               res.redirect("/");
             });
           }

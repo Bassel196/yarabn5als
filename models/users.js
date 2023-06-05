@@ -78,7 +78,7 @@ const userSchema = new mongoose.Schema(
     isVerified: {
       type: Boolean,
       required: true,
-      default: false,
+      default: true,
     },
     address: {
       type: [addressSchema],

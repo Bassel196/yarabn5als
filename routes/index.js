@@ -61,45 +61,45 @@ router.get("/register", authentication.checkLoggedOut, async (req, res) => {
   });
 });
 
-router.get(
-  "/auth/google",
-  authentication.checkLoggedOut,
-  passport.authenticate("google")
-);
+// router.get(
+//   "/auth/google",
+//   authentication.checkLoggedOut,
+//   passport.authenticate("google")
+// );
 
-router.get(
-  "/auth/google/myStyle",
-  authentication.checkLoggedOut,
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    if (req.user.isAdmin === true) {
-      res.redirect("/admin");
-    } else {
-      res.redirect("/");
-    }
-  }
-);
+// router.get(
+//   "/auth/google/myStyle",
+//   authentication.checkLoggedOut,
+//   passport.authenticate("google", { failureRedirect: "/login" }),
+//   function (req, res) {
+//     // Successful authentication, redirect home.
+//     if (req.user.isAdmin === true) {
+//       res.redirect("/admin");
+//     } else {
+//       res.redirect("/");
+//     }
+//   }
+// );
 
-router.get(
-  "/auth/facebook",
-  authentication.checkLoggedOut,
-  passport.authenticate("facebook", { scope: ["email"] })
-);
+// router.get(
+//   "/auth/facebook",
+//   authentication.checkLoggedOut,
+//   passport.authenticate("facebook", { scope: ["email"] })
+// );
 
-router.get(
-  "/auth/facebook/myStyle",
-  authentication.checkLoggedOut,
-  passport.authenticate("facebook", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    if (req.user.isAdmin === true) {
-      res.redirect("/admin");
-    } else {
-      res.redirect("/");
-    }
-  }
-);
+// router.get(
+//   "/auth/facebook/myStyle",
+//   authentication.checkLoggedOut,
+//   passport.authenticate("facebook", { failureRedirect: "/login" }),
+//   function (req, res) {
+//     // Successful authentication, redirect home.
+//     if (req.user.isAdmin === true) {
+//       res.redirect("/admin");
+//     } else {
+//       res.redirect("/");
+//     }
+//   }
+// );
 
 router.get(
   "/forgetPassword",
@@ -141,15 +141,15 @@ router.get("/error", (req, res) => {
 });
 
 router.post("/autoFill", shopControl.autoFill);
-router.post("/validateOtp", otpVerification);
+// router.post("/validateOtp", otpVerification);
 router.post("/forgetPassword", shopControl.forgetPassword);
 router.post("/resetPassword", userControl.resetPassword);
 
-router.post("/resendOtp", async (req, res) => {
-  getOtpForm(req, res);
-  await sendOtp(req, res);
-  req.flash("message", "Otp resend successful");
-});
+// router.post("/resendOtp", async (req, res) => {
+//   getOtpForm(req, res);
+//   await sendOtp(req, res);
+//   req.flash("message", "Otp resend successful");
+// });
 router.post("/login", userControl.userLogin, (req, res) => {
   if (req.user.isAdmin === true) {
     res.redirect("/admin");
