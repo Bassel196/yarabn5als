@@ -39,7 +39,13 @@
           <% allOrders.forEach(order=>{ %>
           <tr id="order-<%= order.id %>">
             <td><a href="/admin/orders/<%= order.id %>" class="link-dark"><%=order.id%></a></td>
-            <td><%=order.userId.email %></td>
+            <td>
+              <% if (order.userId && order.userId.email) { %>
+                <%= order.userId.email %>
+              <% } else { %>
+                N/A
+              <% } %>
+            </td>
             <td>
               <%=order.deliveryAddress.firstName%>
               <%=order.deliveryAddress.lastName%>,
